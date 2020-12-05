@@ -1,0 +1,23 @@
+{
+    "name": "mongodb__wallbox_location__source",
+    "config": {
+        "connector.class": "io.debezium.connector.mongodb.MongoDbConnector",
+        "tasks.max": 1,
+        "mongodb.hosts": "rs0/mongodb:27017",
+        "mongodb.name": "wallbox_location",
+        "collection.whitelist": "mongoDB.WallboxLocation",
+        "value.converter": "io.confluent.connect.avro.AvroConverter",
+        "value.converter.schema.registry.url": "http://confluent-platform-cp-schema-registry:8081",
+        "transforms": "extractMongoDocument,copyClientIDToKey,dropKeyStruct,renameEventIdField,targetKafkaTopic",
+        "transforms.extractMongoDocument.type": "io.debezium.connector.mongodb.transforms.ExtractNewDocumentState",
+        "transforms.copyClientIDToKey.type": "org.apache.kafka.connect.transforms.ValueToKey",
+        "transforms.copyClientIDToKey.fields": "CLIENT_ID",
+        "transforms.dropKeyStruct.type": "org.apache.kafka.connect.transforms.ExtractField$Key",
+        "transforms.dropKeyStruct.field": "CLIENT_ID",
+        "transforms.renameEventIdField.type": "org.apache.kafka.connect.transforms.ReplaceField$Value",
+        "transforms.renameEventIdField.renames": "id:EVENT_ID",
+        "transforms.targetKafkaTopic.type": "org.apache.kafka.connect.transforms.RegexRouter",
+        "transforms.targetKafkaTopic.regex": "(.*)",
+        "transforms.targetKafkaTopic.replacement": "wallbox_location__source"
+    }
+}

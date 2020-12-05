@@ -1,0 +1,22 @@
+apiVersion: v2
+name: hivemq-operator
+description: Operator for the HiveMQ MQTT broker
+type: application
+keywords:
+  - MQTT
+  - IoT
+  - Java
+  - distributed
+  - messaging
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+version: 0.7.0
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application.
+appVersion: 4.4.3
+icon: https://www.hivemq.com/img/svg/hivemq-bee.svg
+dependencies:
+  - name: kube-prometheus-stack
+    repository: https://prometheus-community.github.io/helm-charts
+    condition: monitoring.dedicated, monitoring.enabled
+    version: 11.*
