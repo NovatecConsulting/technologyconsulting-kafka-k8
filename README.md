@@ -28,7 +28,7 @@ kubectl get pods
 ```
 Uninstall a chart:
 ```
-helm unimstall <release-name>
+helm uninstall <release-name>
 ```
 Stop minikube:
 ```
