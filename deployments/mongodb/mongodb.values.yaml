@@ -56,7 +56,7 @@ clusterDomain: cluster.local
 
 ## MongoDB architecture. Allowed values: standalone or replicaset
 ##
-architecture: standalone
+architecture: replicaset
 
 ## Use StatefulSet instead of Deployment when deploying standalone
 ##
@@ -229,7 +229,7 @@ labels: {}
 ## Number of MongoDB replicas to deploy.
 ## Ignored when mongodb.architecture=standalone
 ##
-replicaCount: 2
+replicaCount: 3
 
 ## StrategyType for MongoDB statefulset
 ## It can be set to RollingUpdate or Recreate by default.
@@ -579,7 +579,7 @@ externalAccess:
 arbiter:
   ## Enable deploying the MongoDB Arbiter
   ##   https://docs.mongodb.com/manual/tutorial/add-replica-set-arbiter/
-  enabled: true
+  enabled: false
 
   ## MongoDB configuration file for the Arbiter. For documentation of all options, see:
   ##   http://docs.mongodb.org/manual/reference/configuration-options/
