@@ -4,7 +4,7 @@
         "connector.class": "com.mongodb.kafka.connect.MongoSinkConnector",
         "tasks.max": 1,
         "topics": "wallbox_charge__sink",
-        "connection.uri": "mongodb://mongodb:27017",
+        "connection.uri": "mongodb://mongodb-headless.default.svc.cluster.local:27017/?replicaSet=rs0",
         "database": "mongoDB",
         "collection": "WallboxCharge",
         "value.converter": "io.confluent.connect.avro.AvroConverter",
