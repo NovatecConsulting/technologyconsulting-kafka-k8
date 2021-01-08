@@ -41,7 +41,7 @@ Deploy the connectors:
 ```
 helm install connector-deploy ./deployments/deploy/connector-deploy
 ```
-###Useful Commands
+### Useful Commands
 To install helm charts in the ./charts/ subdirectory:
 ```
 helm install <release-name> <./path/to/charts>
@@ -63,7 +63,7 @@ Delete minikube:
 minikube delete
 ```
 
-###Troubleshooting
+### Troubleshooting
 If you encouter an "ImagePullBackOff" error or another kind of error indicating that the image for Kafka Connect and Connect-Deploy cannot be found,
 this might be because of a wrong port configuration.
 
