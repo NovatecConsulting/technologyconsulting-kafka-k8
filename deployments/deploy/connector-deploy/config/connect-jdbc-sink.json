@@ -9,7 +9,7 @@
       "connection.password": "postgres",
       "auto.create": "true",
       "value.converter": "io.confluent.connect.avro.AvroConverter",
-      "value.converter.schema.registry.url": "http://confluent-platform-cp-schema-registry:8081",
+      "value.converter.schema.registry.url": "http://confluent-platform-schema-registry:8081",
       "table.name.format": "wallbox_location_chargestatus",
       "pk.mode": "record_value",
       "pk.fields": "CLIENT_ID",

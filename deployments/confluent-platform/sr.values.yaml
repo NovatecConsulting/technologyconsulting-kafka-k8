@@ -1,5 +1,5 @@
-cp-schema-registry:
-  # Default values for cp-schema-registry.
+schema-registry:
+  # Default values for schema-registry.
   # This is a YAML-formatted file.
   # Declare variables to be passed into your templates.
 

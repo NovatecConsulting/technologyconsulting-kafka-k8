@@ -1,5 +1,5 @@
-cp-kafka-connect:
-  # Default values for cp-kafka-connect.
+kafka-connect:
+  # Default values for kafka-connect.
   # This is a YAML-formatted file.
   # Declare variables to be passed into your templates.
 

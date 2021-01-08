@@ -1,7 +1,7 @@
 ## ------------------------------------------------------
 ## Zookeeper
 ## ------------------------------------------------------
-cp-zookeeper:
+zookeeper:
   enabled: true
   servers: 3
   image: confluentinc/cp-zookeeper
@@ -36,7 +36,7 @@ cp-zookeeper:
 ## ------------------------------------------------------
 ## Kafka
 ## ------------------------------------------------------
-cp-kafka:
+kafka:
   enabled: true
   brokers: 3
   image: confluentinc/cp-kafka
@@ -64,7 +64,7 @@ cp-kafka:
 ## ------------------------------------------------------
 ## Schema Registry
 ## ------------------------------------------------------
-cp-schema-registry:
+schema-registry:
   enabled: true
   image: confluentinc/cp-schema-registry
   imageTag: 5.5.0
@@ -86,7 +86,7 @@ cp-schema-registry:
 ## ------------------------------------------------------
 ## REST Proxy
 ## ------------------------------------------------------
-cp-kafka-rest:
+kafka-rest:
   enabled: true
   image: confluentinc/cp-kafka-rest
   imageTag: 5.5.0
@@ -108,7 +108,7 @@ cp-kafka-rest:
 ## ------------------------------------------------------
 ## Kafka Connect
 ## ------------------------------------------------------
-cp-kafka-connect:
+kafka-connect:
   enabled: true
   image: confluentinc/cp-kafka-connect
   imageTag: 5.5.0
@@ -130,7 +130,7 @@ cp-kafka-connect:
 ## ------------------------------------------------------
 ## KSQL Server
 ## ------------------------------------------------------
-cp-ksql-server:
+ksql-server:
   enabled: true
   image: confluentinc/cp-ksqldb-server
   imageTag: 5.5.0

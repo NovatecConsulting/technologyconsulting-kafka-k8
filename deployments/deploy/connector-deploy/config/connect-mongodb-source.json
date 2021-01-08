@@ -7,7 +7,7 @@
         "mongodb.name": "wallbox_location",
         "collection.whitelist": "mongoDB.WallboxLocation",
         "value.converter": "io.confluent.connect.avro.AvroConverter",
-        "value.converter.schema.registry.url": "http://confluent-platform-cp-schema-registry:8081",
+        "value.converter.schema.registry.url": "http://confluent-platform-schema-registry:8081",
         "transforms": "extractMongoDocument,copyClientIDToKey,dropKeyStruct,renameEventIdField,targetKafkaTopic",
         "transforms.extractMongoDocument.type": "io.debezium.connector.mongodb.transforms.ExtractNewDocumentState",
         "transforms.copyClientIDToKey.type": "org.apache.kafka.connect.transforms.ValueToKey",

@@ -18,6 +18,30 @@ git clone https://github.com/chargeiq/chargeiq-kafka-kubernetes
 ```
 
 ## Quickstart
+When the minikube cluster is started, enable the registry:
+```
+minikube addons enable registry
+```
+To install all components, run the setup.sh script:
+```
+./setup.sh up
+```
+When finished or for re-deployment:
+```
+./setup.sh down
+```
+To use MongoDB, PostgreSQL and HiveMQ with the help of the Kafka Connect API, several Connectors need to be deployed.
+Kafka Connect always needs several minutes to become available in minikube, depending on your hardware.
+For this reason, the Connectors need to be deployed in the next step as soon as Kafka Connect is ready.
+To check for Connect being available:
+```
+kubectl logs -f <uniquePodName> kafka-connect-server
+```
+Deploy the connectors:
+```
+helm install connector-deploy ./deployments/deploy/connector-deploy
+```
+###Useful Commands
 To install helm charts in the ./charts/ subdirectory:
 ```
 helm install <release-name> <./path/to/charts>
@@ -38,4 +62,16 @@ Delete minikube:
 ```
 minikube delete
 ```
+
+###Troubleshooting
+If you encouter an "ImagePullBackOff" error or another kind of error indicating that the image for Kafka Connect and Connect-Deploy cannot be found,
+this might be because of a wrong port configuration.
+
+When enabling the registry, minikube does not always use the same port. To check the exposed port:
+```
+docker ps
+```
+You will see a list of ports for minikube. Look for a port-pair containing 5000.
+The other port-value should be the same as in the files "build-connect-image.sh", "build-deploy-image.sh" and as in the functions "buildDeployImage" and 
+"buildConnectImage" in the setup.sh script.
 

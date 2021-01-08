@@ -7,7 +7,7 @@
         "mqtt.topics": "#",
         "kafka.topic": "wallbox__source",
         "value.converter": "org.apache.kafka.connect.converters.ByteArrayConverter", 
-        "confluent.topic.bootstrap.servers": "confluent-platform-cp-kafka:9092",
+        "confluent.topic.bootstrap.servers": "confluent-platform-kafka:9092",
         "confluent.topic.replication.factor": 3
     }
 }
