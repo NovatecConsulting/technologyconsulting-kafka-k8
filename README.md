@@ -14,7 +14,7 @@ minikube start
 
 * Change into the directory where you want to clone the project to and download it:
 ```
-git clone https://github.com/chargeiq/chargeiq-kafka-kubernetes
+git clone https://github.com/NovatecConsulting/technologyconsulting-kafka-k8
 ```
 
 ## Quickstart
